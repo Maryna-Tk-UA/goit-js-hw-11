@@ -60,6 +60,12 @@ background-color: transparent;
   background-color: #6c8cff;
 }
 
+.container-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +77,7 @@ background-color: transparent;
   margin: 0 auto;
 }
 
-.galery-item {
+.gallery-item {
  border: 1px solid #808080;
  border-radius: 5px;
 }
@@ -82,7 +88,7 @@ background-color: transparent;
   overflow: hidden;
 }
 
-.galery-item-img {
+.gallery-item-img {
   object-fit: cover;
 }
 

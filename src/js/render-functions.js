@@ -3,13 +3,13 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 const galleryContainer = document.querySelector(".gallery");
 const lightbox = new SimpleLightbox('.gallery a');
-const loader = document.querySelector('.loader');
+const loader = document.querySelector('.container-loader');
 
 export function createGallery(images) {
         const markup = images.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
-          <a href="${largeImageURL}" class="galery-item">
+          <a href="${largeImageURL}" class="gallery-item">
           <div class="img-container">
-        <img src="${webformatURL}" alt="${tags}" class="galery-item-img" width="360">
+        <img src="${webformatURL}" alt="${tags}" class="gallery-item-img" width="360">
         </div>
         <ul class="descr-list">
           <li class="descr-list-item">
@@ -41,9 +41,11 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.style.display = 'block';
+//   loader.style.display = 'block';
+  loader.classList.add('is-active');
 }
 
 export function hideLoader() {
-  loader.style.display = 'none';
+//   loader.style.display = 'none';
+loader.classList.remove('is-active');
 }

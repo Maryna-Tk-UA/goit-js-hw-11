@@ -1,4 +1,8 @@
-.loader-container {
+.container-loader {
+  display: none;
+}
+
+.container-loader.is-active {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -9,8 +13,7 @@
         height: 48px;
         border-radius: 50%;
         position: relative;
-        animation: rotate 1s linear infinite;
-        display: none;
+        animation: rotate 1s linear infinite
       }
       .loader::before , .loader::after {
         content: "";
@@ -36,3 +39,4 @@
           50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
           75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
       }
+  
