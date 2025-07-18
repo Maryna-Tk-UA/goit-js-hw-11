@@ -8,7 +8,10 @@
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
+@import url('./loader.css');
 
+
+      
 
 .form {
   margin: 30px auto;
@@ -27,6 +30,8 @@ line-height: 1.5;
 letter-spacing: 0.04em;
 color: #808080;
 padding: 8px 16px;
+outline: none;
+background-color: transparent;
 }
 
 .input-form:focus {

@@ -4,8 +4,11 @@ import "izitoast/dist/css/iziToast.min.css";
 const form = document.querySelector(".form");
 const galleryContainer = document.querySelector(".gallery");
 
-import {getImagesByQuery} from "./js/pixabay-api"
-import {createGallery} from "./js/render-functions"
+import {getImagesByQuery} from "./js/pixabay-api";
+import {createGallery} from "./js/render-functions";
+import {clearGallery} from "./js/render-functions";
+import {showLoader} from "./js/render-functions";
+import {hideLoader} from "./js/render-functions";
 
 form.addEventListener("submit", handleClick);
 
@@ -28,7 +31,8 @@ function handleClick(event) {
         return;
     }
 
-    galleryContainer.innerHTML = "";
+   clearGallery();
+   showLoader();
 
     getImagesByQuery(inputValue)
   .then(data => {
@@ -57,7 +61,10 @@ function handleClick(event) {
             iconUrl: new URL('./img/error.svg', import.meta.url).href,
             close: false
         })
-  });
+  })
+  .finally(() => {
+    hideLoader();
+  })
 
 
 }
