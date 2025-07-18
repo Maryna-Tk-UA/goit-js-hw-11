@@ -21,6 +21,7 @@
   position: relative;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+  overflow: visible;
 }
 .loader::after {
   content: '';  
